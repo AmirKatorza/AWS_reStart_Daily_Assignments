@@ -1,0 +1,12 @@
+total 0
+-rw-rw-r-- 1 amirkato amirkato 0 Feb 28 19:50 iChick.txt
+-rw-rw-r-- 1 amirkato amirkato 0 Feb 28 19:48 chicken9.txt
+-rw-rw-r-- 1 amirkato amirkato 0 Feb 28 19:48 chicken8.txt
+-rw-rw-r-- 1 amirkato amirkato 0 Feb 28 19:48 chicken7.txt
+-rw-rw-r-- 1 amirkato amirkato 0 Feb 28 19:48 chicken6.txt
+-rw-rw-r-- 1 amirkato amirkato 0 Feb 28 19:48 chicken5.txt
+-rw-rw-r-- 1 amirkato amirkato 0 Feb 28 19:48 chicken4.txt
+-rw-rw-r-- 1 amirkato amirkato 0 Feb 28 19:48 chicken3.txt
+-rw-rw-r-- 1 amirkato amirkato 0 Feb 28 19:48 chicken2.txt
+-rw-rw-r-- 1 amirkato amirkato 0 Feb 28 19:48 chicken1.txt
+r-x

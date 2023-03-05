@@ -1,0 +1,3 @@
+Data migration is the process of moving data from one location to another, one
+format to another, or one application to another. Generally, this is the result of
+introducing a new system or location for the data
