@@ -94,7 +94,7 @@ function system_func() {
             ;;       
         esac
     done
-    main
+    # main
 }
 
 function main () {
