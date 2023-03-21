@@ -60,7 +60,8 @@ function system_func() {
     # 3. Reboot
     # 4. Quit
 
-    while :
+    local flag=0
+    while [ $flag -eq 0 ]
     do 
         echo "-------------MENU---------------------"
         echo "1. Show System Information"
@@ -85,7 +86,7 @@ function system_func() {
             sudo reboot
             ;;
         4 ) echo "Quiting"
-            break
+            flag=1
             ;;
         * )
             echo "Please enter a valid choice"
@@ -98,7 +99,8 @@ function system_func() {
 
 function main () {
 
-while :
+flag=0
+while [ $flag -eq 0 ]
 	do
 		echo "-------------MENU---------------------"
         echo "1. Linux Drills"
@@ -108,10 +110,18 @@ while :
         
         read -p "Please enter you choice: " user_choice           
         case $user_choice in
-		1 ) linux_drills ;;
-		2 ) system_func ;;
-		3 ) break ;;
-		* ) echo "Invalid Choice, Please try again!" ;;            
+		1 ) 
+            linux_drills 
+            ;;
+		2 ) 
+            system_func 
+            ;;
+		3 ) 
+            flag=1 
+            ;;
+		* ) 
+            echo "Invalid Choice, Please try again!" 
+            ;;            
 		esac
 	done
 }
