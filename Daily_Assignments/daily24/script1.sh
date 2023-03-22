@@ -82,7 +82,7 @@ function main () {
 flag=0
 while [ $flag -eq 0 ]
 	do
-		echo "-------------MENU---------------------"
+	    echo "-------------MENU---------------------"
         echo "1. Linux Drills"
         echo "2. Add two Function"
         echo "3. Quit"
