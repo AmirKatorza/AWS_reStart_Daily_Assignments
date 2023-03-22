@@ -1,3 +1,0 @@
-ota
-rwx
-rwx

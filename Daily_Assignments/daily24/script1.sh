@@ -41,8 +41,12 @@ function linux_drills() {
     cat iPokemon.txt
 
     echo "9. Delete Pokemon Directory"
-    read -p "Are you Sure you want to delete: [y/n] " choice
-    if [ $choice == "y" ]
+    local choice="a"
+    while [[ $choice =~ [^yYnN] ]]
+    do
+        read -p "Are you Sure you want to delete: [Y/n] " choice
+    done 
+    if [[ $choice =~ [yY] ]]
     then
         cd ../
         rm -rvf Pokemon/
