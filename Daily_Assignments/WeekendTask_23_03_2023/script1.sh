@@ -64,15 +64,16 @@ function create_files_for() {
 
     mkdir tmp
     local pattern="^\w+$"
-    for ((file_counter=0; file_counter<5; file_counter++))
+    for ((file_counter=0; file_counter<5;))
     do
         read -p "Please Enter file name to create: " fname
         if [[ $fname =~ $pattern ]]
         then    
             $(touch tmp/$fname)
+            (( file_counter++ ))
         else
             echo "Please enter a valid file name without spaces!"
-            (( file_counter-- ))
+            # (( file_counter-- ))
         fi
     done
     rm -rvf tmp   
