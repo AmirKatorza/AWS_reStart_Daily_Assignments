@@ -91,7 +91,7 @@ while [ $flag -eq 0 ]
         echo "4. Quit"
         echo -e "--------------------------------------\n"
         
-        read -p "Please enter you choice: " user_choice           
+        read -p "Please enter your choice: " user_choice           
         case $user_choice in
 		1 ) 
             linux_drills 
