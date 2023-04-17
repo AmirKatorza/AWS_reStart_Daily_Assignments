@@ -3,7 +3,7 @@
 function linux_drills() {
     
     echo "1. Create directories tree as requested"
-    mkdir -p mkdir -p AWS/{DB/{RDS,DynamDB},Deployment_model/{S3,Hybrid,RedShift,Cloud}}
+    mkdir -p AWS/{DB/{RDS,DynamDB},Deployment_model/{S3,Hybrid,RedShift,Cloud}}
     tree AWS/
     echo
 
