@@ -104,7 +104,7 @@ function main () {
                 linux_drills 
                 ;;
             2 ) 
-                check_user_authorization 
+                check_PID_running 
                 ;;
             3 ) 
                 flag=1 
