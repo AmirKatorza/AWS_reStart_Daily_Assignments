@@ -81,7 +81,7 @@ function main () {
         do
             echo "-------------MENU---------------------"
             echo "1. Linux Drills"
-            echo "2. print words containig e"
+            echo "2. print words containing e"
             echo "3. Quit"        
             echo -e "--------------------------------------\n"
             
