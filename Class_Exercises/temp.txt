@@ -1,0 +1,13 @@
+{
+    "AvailabilityZone": "us-west-2a",
+    "CreateTime": "2023-05-08T18:21:27.000Z",
+    "Encrypted": false,
+    "Size": 10,
+    "SnapshotId": "",
+    "State": "creating",
+    "VolumeId": "vol-0a7149ea47713fb82",
+    "Iops": 100,
+    "Tags": [],
+    "VolumeType": "gp2",
+    "MultiAttachEnabled": false
+}
