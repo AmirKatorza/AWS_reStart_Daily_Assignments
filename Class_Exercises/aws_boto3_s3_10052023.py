@@ -57,13 +57,28 @@ def download_file_from_s3(s3_client, bucket_name, file_name, download_path):
 
 # This function deletes the given S3 bucket.
 def delete_s3_bucket(s3_client, bucket_name):
-    try:
+    print("Cheking if bucket is empty...")
+    objects = s3_client.list_objects_v2(Bucket=bucket_name)
+    fileCount = objects['KeyCount']
+    if fileCount == 0:
         response = s3_client.delete_bucket(Bucket=bucket_name)
-    except:
-        print("Error deleting the bucket")
+        print(f"{bucket_name} has been deleted successfully !!!")
     else:
-        print("Bucket was deleted successfully")
-        print(response)
+        print(f"{bucket_name} is not empty {fileCount} objects present")
+        while True:
+            del_choice = input("Do you wish to continue (Y/N): ")
+            if (del_choice == "Y") or (del_choice == "y"):
+                print("Deleting objects from S3 bucket")
+                objects_dict = {'Objects': [{'Key': obj['Key']} for obj in objects['Contents']], 'Quiet': False}
+                del_obj_response = s3_client.delete_objects(Bucket=bucket_name, Delete=objects_dict)
+                del_bckt_response = s3_client.delete_bucket(Bucket=bucket_name)
+                print("Bucket was deleted successfully")
+                break
+            elif del_choice == "N" or del_choice == "n":
+                print("Cancelling Deletion...")
+                break
+            else:
+                print("Invalid Value, try again")
 
 
 def choose_bucket(s3_client):
@@ -82,7 +97,7 @@ def choose_bucket(s3_client):
         else:
             print("Invalid choice please try again")
 
-    return bucket_list[bucket_number-1]['Name']
+    return bucket_list[bucket_number - 1]['Name']
 
 
 def main():
@@ -124,7 +139,7 @@ def main():
             print(f"Listing all object in bucket: {bucket_name}")
             objects_list = list_s3_objects(client, bucket_name)
             while True:
-                idx_file = int(input(f"Please choose file number you wish to download [1-{len(objects_list)}]:"))
+                idx_file = int(input(f"Please choose file number you wish to download [1-{len(objects_list)}]: "))
                 if 1 <= idx_file <= len(objects_list):
                     break
                 else:
