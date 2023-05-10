@@ -62,7 +62,7 @@ def delete_s3_bucket(s3_client, bucket_name):
     fileCount = objects['KeyCount']
     if fileCount == 0:
         response = s3_client.delete_bucket(Bucket=bucket_name)
-        print(f"{bucket_name} has been deleted successfully !!!")
+        print(f"{bucket_name} was deleted successfully!!!")
     else:
         print(f"{bucket_name} is not empty {fileCount} objects present")
         while True:
@@ -72,11 +72,13 @@ def delete_s3_bucket(s3_client, bucket_name):
                 objects_dict = {'Objects': [{'Key': obj['Key']} for obj in objects['Contents']], 'Quiet': False}
                 del_obj_response = s3_client.delete_objects(Bucket=bucket_name, Delete=objects_dict)
                 del_bckt_response = s3_client.delete_bucket(Bucket=bucket_name)
-                print("Bucket was deleted successfully")
+                print(f"{bucket_name} was deleted successfully")
                 break
+            
             elif del_choice == "N" or del_choice == "n":
                 print("Cancelling Deletion...")
                 break
+            
             else:
                 print("Invalid Value, try again")
 
@@ -161,6 +163,7 @@ def main():
         elif user_choice == "7":
             print("Exiting...")
             flag = False
+        
         else:
             print("Invalid Value, please enter a valid number [1-7]")
 
