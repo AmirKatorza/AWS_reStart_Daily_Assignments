@@ -22,11 +22,4 @@ if __name__ == "__main__":
         del_dir(path)
     else:
         print(f"You chose to keep the directory {dir_name}")
-
-
-
-    
-
-
-
-    
+          
